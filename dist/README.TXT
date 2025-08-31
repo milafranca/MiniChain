@@ -1,32 +1,48 @@
-========================
-BUILD OUTPUT DESCRIPTION
-========================
+# MiniChain - Simple Java Blockchain
 
-When you build an Java application project that has a main class, the IDE
-automatically copies all of the JAR
-files on the projects classpath to your projects dist/lib folder. The IDE
-also adds each of the JAR files to the Class-Path element in the application
-JAR files manifest file (MANIFEST.MF).
+MiniChain is a **basic blockchain implementation in Java**, built without frameworks or external libraries.  
+It demonstrates fundamental blockchain concepts such as wallets, transactions, mining, and balance tracking.
 
-To run the project from the command line, go to the dist folder and
-type the following:
+## Features
 
-java -jar "MiniChain.jar" 
+- **Wallets**: Each wallet has a public/private key pair.
+- **Transactions**: Signed using ECDSA.
+- **Mining**: Simple Proof-of-Work with adjustable difficulty.
+- **Blockchain Validation**: Ensures chain integrity.
+- **Console Output**: Displays wallet creation, transactions, mining, and balances.
 
-To distribute this project, zip up the dist folder (including the lib folder)
-and distribute the ZIP file.
+## Project Structure
 
-Notes:
+MiniChain/
+└─ src/
+└─ com/example/minichain/
+├─ Main.java
+├─ core/
+│ ├─ Block.java
+│ ├─ Blockchain.java
+│ ├─ CryptoUtil.java
+│ ├─ Transaction.java
+│ └─ Wallet.java
+└─ api/
+├─ BlockchainAPI.java
+└─ WalletAPI.java
 
-* If two JAR files on the project classpath have the same name, only the first
-JAR file is copied to the lib folder.
-* Only JAR files are copied to the lib folder.
-If the classpath contains other types of files or folders, these files (folders)
-are not copied.
-* If a library on the projects classpath also has a Class-Path element
-specified in the manifest,the content of the Class-Path element has to be on
-the projects runtime path.
-* To set a main class in a standard Java project, right-click the project node
-in the Projects window and choose Properties. Then click Run and enter the
-class name in the Main Class field. Alternatively, you can manually type the
-class name in the manifest Main-Class element.
+
+## How to Run
+
+1. Open the project in **NetBeans** (or any Java IDE).
+2. Make sure Java 17+ is installed.
+3. Compile and run `Main.java` from `com.example.minichain`.
+4. The console will display:
+    - Wallets created
+    - Transactions added
+    - Block mined
+    - Wallet balances
+
+## Example Output
+
+New wallet created: MFkwEwYHKoZ...
+Transaction added: Alice -> Bob : 5.0
+Block mined by: Alice
+Balance of Alice: 5.0
+Balance of Bob: 5.0
